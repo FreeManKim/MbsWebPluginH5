@@ -1189,6 +1189,7 @@ function() {
 		"EMail",
 		// 打开手机自带浏览器
 		"openBrowser"
+		//注释
 	];
 	$.each(methods, function(i, method) {
 		Utils.app[method] = function(params, callback) {
