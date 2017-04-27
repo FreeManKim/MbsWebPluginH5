@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<title>原生接口测试</title>
+		<link href="../assets/img/icon/favicon.ico" rel="shortcut icon" />
+
+		<link rel="stylesheet" href="assets/css/mui.css" />
+		<link rel="stylesheet" href="assets/css/font-awesome.css" />
+		<link rel="stylesheet" href="assets/css/common.css" />
+		<link rel="stylesheet" href="assets/css/business.css" />
+		<script type="text/javascript" src='cache_update.js'></script>
+
+	</head>
+
+	<body>
+		<div class="mui-content">
+			<div class="ln">
+				<button class="toast-1 mui-btn mui-btn-block mui-btn-primary">消息</button>
+				<button class="toast-2 mui-btn mui-btn-block mui-btn-primary">长消息</button>
+				<button class="loading mui-btn mui-btn-block mui-btn-primary">正在加载</button>
+			</div>
+			<div class="ln">
+				<button class="dialog-ok mui-btn mui-btn-block mui-btn-primary">对话框-确定</button>
+				<button class="dialog-cancel mui-btn mui-btn-block mui-btn-primary">对话框-取消</button>
+				<button class="dialog-two mui-btn mui-btn-block mui-btn-primary">对话框-确定取消</button>
+			</div>
+			<div class="ln">
+				<button class="setDate mui-btn mui-btn-block mui-btn-primary">日期选择&nbsp;<i>2008-08-08</i></button>
+				<button class="setTime mui-btn mui-btn-block mui-btn-primary">时间选择&nbsp;<i>10:20</i></button>
+			</div>
+			<div class="ln">
+				<button class="setTitleBarBg mui-btn mui-btn-block mui-btn-primary">设置标题栏背景色&nbsp;<i>#FFFFFF</i></button>
+				<button class="setTitleBarBg mui-btn mui-btn-block mui-btn-primary">设置标题栏背景色&nbsp;<i>#3198f7</i></button>
+				<button class="setTitle mui-btn mui-btn-block mui-btn-primary">设置标题&nbsp;<i>#3198f7</i></button>
+
+			</div>
+			<div class="ln">
+				<button class="setDatabase mui-btn mui-btn-block mui-btn-primary">保存数据库&nbsp;<i>This is a test data.</i></button>
+				<button class="getDatabase tleBarBg mui-btn mui-btn-block mui-btn-primary">读取数据库&nbsp;<i></i></button>
+			</div>
+			<div class="ln">
+				<button class="setRightMenu mui-btn mui-btn-block mui-btn-primary">右上角菜单</button>
+				<button class="setBottomMenu tleBarBg mui-btn mui-btn-block mui-btn-primary">底部菜单</button>
+			</div>
+			<div class="ln">
+				<a class="mui-btn mui-btn-block mui-btn-primary" href="http://euat.idoutec.cn/HyTestDdemo/native.html?action=nextPage">打开新窗口-老webview</a>
+				<button class="openWindow mui-btn mui-btn-block mui-btn-primary">打开新窗口-轻量webview</button>
+			</div>
+			<div class="ln">
+				<button class="getVersion tleBarBg mui-btn mui-btn-block mui-btn-primary">获取版本号&nbsp;<i></i></button>
+				<button class="checkforupdate tleBarBg mui-btn mui-btn-block mui-btn-primary">检测版并且升级&nbsp;<i></i></button>
+			</div>
+
+			<div class="ln">
+				<button class="recvMessage tleBarBg mui-btn mui-btn-block mui-btn-primary">注册广播，接收消息 &nbsp;<i></i></button>
+
+				<button class="sendMessage tleBarBg mui-btn mui-btn-block mui-btn-primary">发送广播，发送消息&nbsp;<i></i></button>
+			</div>
+			<div class="ln">
+				<button class="forbidRefresh tleBarBg mui-btn mui-btn-block mui-btn-primary">禁止刷新 &nbsp;<i></i></button>
+
+				<button class="getNetWorkStatus tleBarBg mui-btn mui-btn-block mui-btn-primary">获取网络状态&nbsp;<i></i></button>
+			</div>
+			<div class="ln">
+				<button class="playVideo tleBarBg mui-btn mui-btn-block mui-btn-primary">播放视频 &nbsp;<i></i></button>
+
+				<button class="clearTask tleBarBg mui-btn mui-btn-block mui-btn-primary">清理任务&nbsp;<i></i></button>
+				<button class="downloadFile tleBarBg mui-btn mui-btn-block mui-btn-primary">下载文件&nbsp;<i></i></button>
+
+			</div>
+		</div>
+	</body>
+
+	<script src="assets/js/mui.js"></script>
+	<script src="assets/js/jquery.1.11.1.js"></script>
+	<script src="assets/js/zhh.tools.js"></script>
+	<script src="assets/js/utils.js"></script>
+	<script src="assets/js/config.js"></script>
+	<script src="assets/js/business.js"></script>
+	<script src="assets/js/plugin-init.js"></script>
+	<script src="assets/js/mainpage.js"></script>
+	<script>
+		$(function($) {
+			$("button.toast-1").on("click", function() {
+				Utils.toast("这是一条消息!");
+			});
+			$("button.toast-2").on("click", function() {
+				Utils.toast("这是一条长消息, 很长很长的消息, 很长很长的消息, 很长很长的消息, 很长很长的消息, 很长很长的消息!");
+			});
+			$("button.loading").on("click", function() {
+				Utils.app.showLoading('正在加载...');
+				setTimeout(Utils.app.hideLoading, 2000);
+			});
+			$("button.dialog-ok").on("click", function() {
+				Utils.app.showDialog("这是一条消息!", "警告", function() {
+					Utils.toast("你点击了确定按钮!");
+				});
+			});
+			$("button.dialog-cancel").on("click", function() {
+				// 只有取消按钮
+				Utils.app.showDialog("这是一条长消息, 很长很长的消息, 很长很长的消息, 很长很长的消息, 很长很长的消息, 很长很长的消息!", true, false);
+			});
+			$("button.dialog-two").on("click", function() {
+				Utils.app.showDialog("你确定要这么干吗???", "确认", true, function() {
+					Utils.toast("你点击了确定按钮!");
+				});
+			});
+			$("button.setRightMenu").on("click", function() {
+				Utils.app.setRightMenu({
+					item: [{
+						name: '审批',
+						icon: '',
+						url: '',
+						callback: function() {
+							Utils.toast("你选择了审批!");
+						}
+					}]
+				});
+			});
+			$("button.setBottomMenu").on("click", function() {
+				// 底部菜单
+				Utils.app.setBottomMenu({
+					item: [{
+						name: '同意',
+						icon: '',
+						url: '',
+						callback: function() {
+							Utils.toast("你选择了同意!");
+						}
+					}, {
+						name: '拒绝',
+						icon: '',
+						url: '',
+						callback: function() {
+							Utils.toast("你选择了拒绝!");
+						}
+					}, {
+						name: '退回',
+						icon: '',
+						url: '',
+						callback: function() {
+							Utils.toast("你选择了退回!");
+						}
+					}, {
+						name: '加签',
+						icon: '',
+						url: '',
+						callback: function() {
+							Utils.toast("你选择了加签!");
+						}
+					}]
+				});
+			});
+			$("button.setDate").on("click", function() {
+				var i = $(this).find("i");
+				Utils.app.setDate({
+					date: i.text()
+				}, function(json) {
+					i.text(json.date);
+				});
+			});
+			$("button.setTime").on("click", function() {
+				var i = $(this).find("i");
+				Utils.app.setTime({
+					time: i.text()
+				}, function(json) {
+					i.text(json.time);
+				});
+			});
+			$("button.setTitleBarBg").on("click", function() {
+				var i = $(this).find("i");
+				Utils.app.setTitleBarBg({
+					color: i.text()
+				});
+			});
+			// 存储数据库
+			$("button.setDatabase").on("click", function() {
+				var i = $(this).find("i");
+				Utils.app.db.set("test", i.text());
+				Utils.toast("保存成功!");
+			});
+			// 读取数据
+			$("button.getDatabase").on("click", function() {
+				var i = $(this).find("i");
+				Utils.app.db.get("test", function(value) {
+					i.text(value);
+				});
+			});
+			// 打开新窗口
+			$("button.openWindow").on("click", function() {
+				Utils.app.hideNavigation("http://euat.idoutec.cn/HyTestDdemo/native.html?back=original");
+			});
+			// 获取图片base64编码
+			$("button.getImage").on("click", function() {
+				uploadFile
+			});
+
+			$("button.getVersion").on("click", function() {
+				var i = $(this).find("i");
+
+				// 底部菜单
+				Utils.app.getVersion({
+					item: {
+						name: 'getVersion',
+						comment: '获取版本号',
+					}
+				}, function(vaule) {
+					i.text(vaule);
+					Utils.toast(value);
+				});
+
+				$("button.checkforupdate").on("click", function() {
+					var i = $(this).find("i");
+					Utils.app.checkForUpdate({
+						item: {
+							name: 'checkForUpdate',
+							comment: '检查版本更新',
+						}
+					}, function(value) {
+						i.text(value);
+						Utils.toast(value);
+					});
+				});
+			});
+			$("button.recvMessage").on("click", function() {
+				var i = $(this).find("i");
+				Utils.app.recvMessage({
+					item: {
+						name: 'recvMessage',
+						comment: '注册广播',
+						notificationName: 'test.fxd.recvMessage',
+						type: '12'
+					}
+				}, function(value) {
+					i.text(value);
+					Utils.toast(value);
+				});
+			});
+			$("button.sendMessage").on("click", function() {
+				var i = $(this).find("i");
+				Utils.app.sendMessage({
+					item: {
+						name: 'sendMessage',
+						comment: '接收消息',
+						notificationName: 'test.fxd.recvMessage',
+						type: '12'
+					}
+				}, function(value) {
+					i.text(value);
+					Utils.toast(value);
+				});
+			});
+			$("button.forbidRefresh").on("click", function() {
+				var i = $(this).find("i");
+				Utils.app.forbidRefresh({
+					item: {
+						name: 'forbidRefresh',
+						comment: '禁止刷新',
+					}
+				}, function(value) {
+					i.text(value);
+					Utils.toast(value);
+				});
+			});
+			$("button.getNetWorkStatus").on("click", function() {
+				var i = $(this).find("i");
+				Utils.app.getNetWorkStatus({
+					item: {
+						name: 'getNetWorkStatus',
+						comment: '获取网络状态',
+					}
+				}, function(value) {
+					i.text(value);
+					Utils.toast(value);
+				});
+			});
+			$("button.setTitle").on("click", function() {
+				var i = $(this).find("i");
+				Utils.app.getNetWorkStatus({
+					item: {
+						name: 'setTitle',
+						comment: '设置标题',
+						title: '震惊！这竟然是新标题',
+					}
+				}, function(value) {
+					i.text(value);
+					Utils.toast(value);
+				});
+			});
+			$("button.playVideo").on("click", function() {
+				var i = $(this).find("i");
+				Utils.app.playVideo({
+					item: {
+						name: 'playVideo',
+						comment: '播放视频',
+						courseSrc: 'http://vs3.bdstatic.com/swf/probe.swf?v=20150311&amp;r=0.3696902815522458',
+					}
+				}, function(value) {
+					i.text(value);
+					Utils.toast(value);
+				});
+			});
+			$("button.clearTask").on("click", function() {
+				var i = $(this).find("i");
+				Utils.app.clearTask({
+					item: {
+						name: 'clearTask',
+						comment: '清理任务栈',
+						clearTask: 1,
+					}
+				}, function(value) {
+					i.text(value);
+					Utils.toast(value);
+				});
+			});
+			$("button.downloadFile").on("click", function() {
+				var i = $(this).find("i");
+				Utils.app.downloadFile({
+					item: {
+						name: 'downloadFile',
+						comment: '下载文件',
+						url: 'http://s.cn.bing.net/az/hprichbg/rb/SaronicGulf_ZH-CN8379891695_1920x1080.jpg',
+					}
+				}, function(value) {
+					i.text(value);
+					Utils.toast(value);
+				});
+			});
+		});
+	</script>
+
+</html>

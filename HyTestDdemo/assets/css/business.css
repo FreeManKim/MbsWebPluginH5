@@ -1,0 +1,655 @@
+@charset "UTF-8";
+/** 基于mui的通用样式 **/
+
+.mui-popover.width-sm { width:150px; }
+.mui-popover.width-md { width:200px; }
+.mui-popover.width-lg { width:300px; }
+.mui-popover.width-xl { width:500px; }
+.mui-popover.width-auto { width:auto; }
+.mui-popover.width-full { width:100%; border-radius:0; }
+.mui-popover.width-full + .mui-backdrop { background-color: transparent; }
+
+.ln {
+	background-color:#FFF;
+    position: relative;
+    overflow: hidden;
+    padding: 11px 15px;
+    -webkit-touch-callout: none;
+}
+.ln:last-child:before, .ln:last-child:after {
+    height: 0;
+}
+.ln.mui-input-row {
+    padding: 0;
+}
+html body .mui-content .ln.bg-clear {
+	/** 如果用transparent, 有可能会把'下拉可以刷新'的字透出来 **/
+	background-color:#efeff4;
+}
+.mui-table-view-cell .ln {
+    padding: 3px 0;
+}
+.ln.icon-on-left {
+	padding-left:45px;
+}
+.ln.icon-on-left .icon {
+	font-size:12px;
+	position: absolute;
+	left:15px;
+	top:11px;
+}
+.mui-table-view-cell .ln.icon-on-left {
+	padding-left:30px;
+}
+.mui-table-view-cell .ln.icon-on-left .icon {
+	left:0;
+}
+.ln input, .ln select, .ln textarea {
+	margin-bottom:0;
+}
+.uploads {
+	min-height:102px;
+}
+.uploads .camera, .uploads .image {
+	position:relative;
+	display:inline-block;
+	float:left;
+	width:70px; height:70px;
+	margin-right: 10px;
+	margin-bottom: 10px;
+}
+.uploads .camera {
+	background:url(../img/icon/xiangji.png) no-repeat scroll center center transparent;
+	background-size:contain;
+}
+.uploads .image img {
+	width:100%; height:100%;
+}
+.uploads .image .delete {
+	position: absolute;
+	top: -10px; right: -10px;
+	border:5px solid transparent;
+	width:30px; height:30px;
+	background:url(../img/icon/shanchu.png) no-repeat scroll center center transparent;
+	background-size:contain;
+}
+
+.empty-wrapper {
+	width: 100%; height: 100%; min-height: 300px;
+}
+.empty-icon {
+	width: 100%; height: 50%; min-height: 150px;
+	background:url(../img/icon/wujieguo.png) no-repeat scroll bottom center;
+	background-size: 80px;
+}
+.empty-text {
+	color: #8c8c8c; font-size: 16px; text-align:center;
+}
+
+
+/*****************************************\
+	修改星级评价插件(jquery.raty.ls)的样式
+\*****************************************/
+.star-rating {
+	margin:0 auto; height:24px;
+}
+/*****************************************\
+	修改datepicker3.css的BUG
+\*****************************************/
+html body .input-daterange .input-group-addon {
+	/** BUG width:auto 导致日期范围选择与其他输入框无法对齐 **/
+	width: 1%;
+}
+/*****************************************\
+	修改select2的BUG
+\*****************************************/
+.select2-container {
+	/** BUG 通过JS写死宽度, 导致窗口大小变化时无法自适应 **/
+	width: auto !important;
+}
+
+/*****************************************\
+	Bootstrap 样式改写
+\*****************************************/
+.tooltip, .popover {
+	font-family: "Microsoft Yahei", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+/** 微软雅黑加粗太难看了 **/
+label {
+	font-weight: normal;
+}
+/** 按钮放在输入框左边时有一条缝 **/
+.input-group-btn:first-child > .btn, .input-group-btn:first-child > .btn-group {
+	border-right: 0; margin-right: -1px;
+}
+/** 按钮放在输入框组时保持与input-group-addon一样的底色 **/
+.input-group-btn > .btn.btn-default {
+	background-color: #eee;
+}
+/** 输入框左右的图标对齐 **/
+.input-group-addon:first-child, .input-group-addon:last-child {
+	min-width: 40px;
+}
+/*****************************************\
+	Bootstrap 样式增强
+\*****************************************/
+/** 增加 Progress Bar 尺寸 **/
+.progress.sm {
+  height: 10px;
+}
+.progress.sm,
+.progress.sm .progress-bar {
+  border-radius: 1px;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+.progress.xs {
+  height: 7px;
+}
+.progress.xs,
+.progress.xs .progress-bar {
+  border-radius: 1px;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+.progress.xxs {
+  height: 3px;
+}
+.progress.xxs,
+.progress.xxs .progress-bar {
+  border-radius: 1px;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+
+
+/*****************************************\
+	mui 样式改写
+\*****************************************/
+.mui-bar .mui-icon {
+	font-size: 26px;
+	padding-top: 8px;
+}
+.mui-title {
+	font-size: 20px;
+}
+.mui-content {
+	font-size: 16px;
+}
+.mui-btn {
+	padding-top: 8px;
+	padding-bottom: 8px;
+	border-radius: 4px;
+	font-weight: 400;
+}
+.mui-btn-block:last-child {
+	margin-bottom: 0;
+}
+.mui-btn + .mui-btn.mui-btn-link {
+	margin-top: -10px;
+}
+.mui-table-view-cell > .mui-btn {
+	padding-top: 6px;
+	padding-bottom: 6px;
+}
+.mui-btn-primary, .mui-btn-blue {
+	border-color: #2196F3;
+	background-color: #2196F3;
+}
+.mui-btn-primary.mui-btn-outlined, .mui-btn-blue.mui-btn-outlined {
+	color: #3198f7;
+	background-color:transparent;
+}
+.mui-btn-link {
+	color: #3198f7;
+}
+.mui-content > .mui-table-view:first-child {
+	margin-top:0;
+}
+.mui-content ~ .mui-content {
+	padding-top:0;
+}
+/** 列表 **/
+.mui-table-view-cell.mui-active, .mui-table-view-cell > a:not(.mui-btn).mui-active {
+    background-color: #fff;
+}
+.mui-table-view.after-with-ln:before {
+	left: 15px;
+	right: 15px;
+}
+/** 表单 **/
+.mui-input-group .mui-input-row label {
+	padding-right: 5px;
+}
+.mui-input-group a.mui-input-row label {
+	padding-right: 15px;
+	color: #000;
+	width: 100%;
+}
+.mui-input-group .mui-input-row:after {
+	right: 15px;
+}
+.mui-input-group .mui-input-row {
+	height: auto;
+	min-height: 40px;
+}
+.mui-input-group .mui-input-row.split {
+	background-color: #efeff4;
+	height:15px;
+	min-height: 15px;
+}
+.mui-input-group .mui-input-row .input {
+	display: inline-block;
+	min-height:40px; line-height:20px;
+	padding-top:10px; padding-bottom:10px;
+	padding-right:10px;
+	width: 65%;
+}
+.mui-input-group .mui-input-row .mui-navigate-right input {
+	padding-right: 40px;
+}
+.mui-input-group .mui-input-row .input-visibled {
+	float: right;
+	width: 65%;
+	padding:5px 15px 5px 5px;
+}
+.mui-input-group .mui-input-row .input-visibled input {
+	height: 30px;
+	line-height: 20px;
+	padding: 5px;
+	border: 1px solid #CCC;
+	border-radius: 4px;
+}
+/** 表单右侧有单位 **/
+.mui-input-group a.mui-input-row {
+	display: block;
+}
+.mui-input-group .mui-input-row.addon-right {
+	position: relative;
+}
+.mui-input-group .mui-input-row.addon-right .addon {
+    position: absolute;
+    display: inline-block;
+    top:50%; right: 15px;
+    height: 40px;
+    line-height: 40px;
+    min-width: 20px;
+    text-align: center;
+    -webkit-transform: translateY(-50%);
+            transform: translateY(-50%);
+}
+.mui-input-group .mui-input-row.addon-right .addon.mui-icon {
+    font-size: 20px;
+    color: #8c8c8c;
+}
+.mui-input-group .mui-input-row.addon-right input,
+.mui-input-group .mui-input-row.addon-right .input,
+.mui-input-group .mui-input-row.addon-right .input-visibled {
+	padding-right: 40px;
+}
+.mui-input-group .mui-input-row.addon-right .input-visibled input {
+	padding-right: 5px;
+}
+a input, a textarea, a select {
+	color: #000000;
+}
+/** 列表中的表单 **/
+.mui-table-view .mui-input-group .mui-input-row label {
+	font-size: 1em;
+	padding-left: 0;
+}
+.mui-table-view .mui-input-group .mui-input-row:after {
+	left: 0;
+}
+.mui-popup .mui-popup-button.mui-popup-button-bold {
+	font-weight: normal;
+}
+.mui-navigate-right:after {
+	color: #8c8c8c;
+	font-size: 20px;
+	line-height: 21px;
+	font-weight: normal;
+}
+.mui-popup-title + .mui-popup-text {
+	margin-top:15px;
+}
+.mui-toast-message {
+    font-size: 15px;
+    padding: 10px;
+    color: #FFF;
+    border-radius: 5px;
+    *background-color: #bbb;
+    background-color: rgba(0,0,0,0.65);
+}
+.mui-table-view-cell:after {
+	left: 15px; right: 15px;
+}
+.mui-bar.mui-bar-footer {
+	height: 60px;
+	-webkit-box-shadow: 0 0 1px #c8c7cc;
+	box-shadow: 0 0 1px #c8c7cc;
+}
+.mui-bar.mui-bar-footer + .mui-content {
+	padding-bottom: 60px;
+}
+.mui-bar.mui-bar-footer.hide + .mui-content, .mui-bar.mui-bar-footer.display-none + .mui-content {
+	padding-bottom: 0px;
+}
+.mui-bar.mui-bar-footer .mui-btn-block {
+	padding-top: 8px;
+	padding-bottom: 8px;
+	top: 10px;
+}
+.mui-navigate-right {
+	position: relative;
+}
+.mui-input-group .mui-navigate-right {
+	display:block;
+	height: 100%;
+}
+.mui-input-row .mui-input-clear ~ .mui-icon-clear, .mui-input-row .mui-input-speech ~ .mui-icon-speech, .mui-input-row .mui-input-password ~ .mui-icon-eye {
+	top:0; height:40px; line-height:40px;
+}
+/*****************************************\
+	mui 样式增强
+\*****************************************/
+.mui-row.plr-split {
+	margin-left: -5px;
+	margin-right: -5px;
+}
+.mui-row.plr-split > [class*='mui-col-'] {
+	padding-left: 5px;
+	padding-right: 5px;
+}
+header .mui-title i.fa {
+	color:#007aff;
+}
+/** 右上角文字菜单 **/
+.mui-bar .mui-text-btn {
+	font-size: 18px;
+	line-height: 1;
+	margin-right: -10px;
+	margin-left: -10px;
+	padding-top: 13px;
+	padding-bottom: 13px;
+	padding-right: 10px;
+	padding-left: 10px;
+}
+/** 打开之后切换箭头的方向 **/
+.mui-popover-opened i.fa.fa-angle-down:before {
+	content:"\f106";
+}
+.mui-table-view-cell .red-dot {
+    position: absolute;
+	left: -10px;
+	font-size: 22px;
+}
+.mui-navigate-right > .pull-right {
+	margin-right:25px;
+}
+.mui-navigate-right > .pull-right .red-dot {
+	position: static;
+	font-size: 28px;
+	float: right;
+}
+.red-dot:before {
+	color:#f75858;
+	content:'•';
+}
+/** 按钮反色 **/
+.mui-btn-primary.mui-btn-inverse {
+	color: #3198f7;
+	border-color: #3198f7;
+	background-color: #FFF;
+}
+input[type='submit'].mui-btn-inverse:enabled:active, input[type='submit'].mui-btn-inverse.mui-active:enabled,
+.mui-btn-primary.mui-btn-inverse:enabled:active,
+.mui-btn-primary.mui-btn-inverse.mui-active:enabled, .mui-btn-blue.mui-btn-inverse:enabled:active, .mui-btn-blue.mui-btn-inverse.mui-active:enabled {
+    color: #0062cc;
+    border-color: #0062cc;
+    background-color: #EEE;
+}
+/** 弹出菜单分栏 **/
+.mui-popover[class*='column-count-'] .mui-table-view {
+	background-color: #efeff4;
+	padding: 7.5px;
+	max-height: 305px;
+}
+.mui-popover[class*='column-count-'] .mui-popover-arrow:after {
+	background-color: #efeff4;
+}
+.mui-popover[class*='column-count-'] .mui-table-view-cell {
+	float: left;
+	width: 100%;
+	padding: 11px 15px;
+	border-radius:0;
+	background-color: transparent;
+}
+.mui-popover.column-count-2 .mui-table-view-cell {
+	width: 50%;
+}
+.mui-popover.column-count-3 .mui-table-view-cell {
+	width: 33.33333333%;
+}
+.mui-popover.column-count-4 .mui-table-view-cell {
+	width: 25%;
+}
+.mui-popover[class*='column-count-'] .mui-table-view-cell.full-line {
+	width: 100%;
+}
+.mui-popover[class*='column-count-'] .mui-table-view-cell > a:not(.mui-btn) {
+	border-radius:0;
+	margin: -3.5px -7.5px;
+	background-color: #FFFFFF;
+}
+.mui-popover[class*='column-count-'] .mui-table-view-cell:after {
+	height: 0;
+}
+.mui-popover[class*='column-count-'] .mui-table-view .mui-table-view-cell:first-child, 
+.mui-popover[class*='column-count-'] .mui-table-view .mui-table-view-cell:first-child > a:not(.mui-btn),
+.mui-popover[class*='column-count-'] .mui-table-view .mui-table-view-cell:last-child, 
+.mui-popover[class*='column-count-'] .mui-table-view .mui-table-view-cell:last-child > a:not(.mui-btn) {
+	border-radius:0;
+}
+
+/*****************************************\
+	mui 单页应用  转场动画
+\*****************************************/
+.mui-page {
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	width: 100%;
+	height: 100%;
+}
+.boxed .mui-page {
+    max-width: 800px;
+    margin: auto;
+}
+.mui-page.mui-transitioning {
+	-webkit-transition: -webkit-transform 100ms linear;
+	transition: transform 100ms linear;
+}
+.mui-page-left {
+	-webkit-transform: translate3d(0, 0, 0);
+	        transform: translate3d(0, 0, 0);
+}
+.mui-page-shadow {
+	position: absolute;
+	right: 100%;
+	top: 0;
+	width: 16px;
+	height: 100%;
+	z-index: -1;
+	content: '';
+}
+.mui-page-shadow {
+	background: -webkit-linear-gradient(left,     rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, 0) 10%, rgba(0, 0, 0, 0.01) 50%, rgba(0, 0, 0, 0.2) 100%);
+	background:         linear-gradient(to right, rgba(0, 0, 0, 0) 0, rgba(0, 0, 0, 0) 10%, rgba(0, 0, 0, 0.01) 50%, rgba(0, 0, 0, 0.2) 100%);
+}
+.mui-pages .mui-page {
+	display: block;
+	opacity: 0;
+}
+.mui-pages .mui-page.mui-page-left, .mui-pages .mui-page.mui-page-center {
+	opacity: 1;
+}
+.mui-fullscreen {
+	position: fixed;
+}
+
+
+/*****************************************\
+	mui 图片预览
+\*****************************************/
+.mui-preview-image.mui-fullscreen {
+	position: fixed;
+	z-index: 800;
+	background-color: #000;
+}
+.mui-preview-header,
+.mui-preview-footer {
+	position: absolute;
+	width: 100%;
+	left: 0;
+	z-index: 10;
+}
+.mui-preview-header {
+    padding: 5px 0px;
+    top: 0;
+    background: #282828;
+}
+.mui-preview-footer {
+	height: 50px;
+	bottom: 0px;
+}
+.mui-preview-header .mui-preview-indicator {
+	display: block;
+	line-height: 25px;
+	color: #fff;
+	text-align: center;
+	width: 100%;
+	font-size: 16px;
+}
+.mui-preview-image {
+	display: none;
+	-webkit-animation-duration: 0.5s;
+	animation-duration: 0.5s;
+	-webkit-animation-fill-mode: both;
+	animation-fill-mode: both;
+}
+.mui-preview-image.mui-preview-in {
+	-webkit-animation-name: fadeIn;
+	animation-name: fadeIn;
+}
+.mui-preview-image.mui-preview-out {
+	background: none;
+	-webkit-animation-name: fadeOut;
+	animation-name: fadeOut;
+}
+.mui-preview-image.mui-preview-out .mui-preview-header,
+.mui-preview-image.mui-preview-out .mui-preview-footer {
+	display: none;
+}
+.mui-zoom-scroller {
+	position: absolute;
+	display: -webkit-box;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-box-align: center;
+	-webkit-align-items: center;
+	align-items: center;
+	-webkit-box-pack: center;
+	-webkit-justify-content: center;
+	justify-content: center;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	-webkit-backface-visibility: hidden;
+}
+.mui-zoom {
+	-webkit-transform-style: preserve-3d;
+	transform-style: preserve-3d;
+}
+.mui-slider .mui-slider-group .mui-slider-item img {
+    width: 100%;
+    height: auto;
+    max-height: 100%;
+    /*padding-top: 40px;*/
+}
+.mui-android-4-1 .mui-slider .mui-slider-group .mui-slider-item img {
+	width: 100%;
+}
+.mui-android-4-1 .mui-slider.mui-preview-image .mui-slider-group .mui-slider-item {
+	display: inline-table;
+}
+.mui-android-4-1 .mui-slider.mui-preview-image .mui-zoom-scroller img {
+	display: table-cell;
+	vertical-align: middle;
+}
+.mui-preview-loading {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	display: none;
+}
+.mui-preview-loading.mui-active {
+	display: block;
+}
+.mui-preview-loading .mui-spinner-white {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-left: -25px;
+	margin-top: -25px;
+	height: 50px;
+	width: 50px;
+}
+.mui-preview-image img.mui-transitioning {
+	-webkit-transition: -webkit-transform 0.5s ease, opacity 0.5s ease;
+	transition: transform 0.5s ease, opacity 0.5s ease;
+}
+/* 按住说话 */
+.speak-box{
+    width: 100%;
+    height: 20px;
+    line-height: 20px;
+    text-align: end;
+}
+.speak-btn{
+    height: 100%;
+    display: inline-block;
+    font-size: 14px;
+    color: #656565;
+}
+.speak-btn:BEFORE{    
+    content: "";
+    width: 18px;
+    height: 18px;
+    display: inline-block;
+    background: url(../img/icon/yuyinshuru.png) no-repeat center;
+    background-size: contain;
+    position: relative;
+    top: 2px;
+}
+.speak-btn-small{
+    width: 18px;
+    height: 100%;
+    border: 3px solid transparent;
+    display: inline-block;
+    position: absolute;
+    right: 8px;
+    background: url(../img/icon/yuyinshuru.png) no-repeat center;
+    background-size: contain;
+    box-sizing: border-box;
+}
+

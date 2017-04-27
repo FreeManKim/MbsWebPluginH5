@@ -1,0 +1,52 @@
+.mui-btn,
+button,
+input[type=button],
+input[type=reset],
+input[type=submit] {
+	font-size: 14px;
+	font-weight: 400;
+	line-height: 1.42;
+	position: relative;
+	display: inline-block;
+	margin-bottom: 0;
+	padding: 6px 12px;
+	cursor: pointer;
+	-webkit-transition: all;
+	transition: all;
+	-webkit-transition-timing-function: linear;
+	transition-timing-function: linear;
+	-webkit-transition-duration: .2s;
+	transition-duration: .2s;
+	text-align: center;
+	vertical-align: top;
+	white-space: nowrap;
+	color: #333;
+	border: 1px solid #ccc;
+	border-radius: 3px;
+	border-top-left-radius: 3px;
+	border-top-right-radius: 3px;
+	border-bottom-right-radius: 3px;
+	border-bottom-left-radius: 3px;
+	background-color: #fff;
+	background-clip: padding-box
+}
+
+.mui-btn-block {
+	font-size: 18px;
+	display: block;
+	width: 100%;
+	margin-bottom: 10px;
+	padding: 15px 0;
+}
+
+.mui-btn-primary,
+input[type=button] {
+	 color: #fff;
+    border: 1px solid #007aff;
+    background-color: #007aff;
+}
+
+.mui-content-padded {
+	margin: 10px
+}
+
