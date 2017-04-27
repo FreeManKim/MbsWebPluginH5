@@ -71,6 +71,9 @@
 
 				<button class="clearTask tleBarBg mui-btn mui-btn-block mui-btn-primary">清理任务&nbsp;<i></i></button>
 				<button class="downloadFile tleBarBg mui-btn mui-btn-block mui-btn-primary">下载文件&nbsp;<i></i></button>
+			</div>
+			<div class="ln">
+				<button class="EMail tleBarBg mui-btn mui-btn-block mui-btn-primary">发送邮件&nbsp;<i></i></button>
 
 			</div>
 		</div>
@@ -193,7 +196,7 @@
 			});
 			// 打开新窗口
 			$("button.openWindow").on("click", function() {
-				Utils.app.hideNavigation("http://euat.idoutec.cn/HyTestDdemo/native.html?back=original");
+				Utils.app.hideNavigation("http://euat.idoutec.cn/HyTestDdemo/native.html");
 			});
 			// 获取图片base64编码
 			$("button.getImage").on("click", function() {
@@ -205,22 +208,18 @@
 
 				// 底部菜单
 				Utils.app.getVersion({
-					item: {
-						name: 'getVersion',
-						comment: '获取版本号',
-					}
-				}, function(vaule) {
-					i.text(vaule);
+					name: 'getVersion',
+					comment: '获取版本号',
+				}, function(value) {
+					i.text(value);
 					Utils.toast(value);
 				});
 
 				$("button.checkforupdate").on("click", function() {
 					var i = $(this).find("i");
 					Utils.app.checkForUpdate({
-						item: {
-							name: 'checkForUpdate',
-							comment: '检查版本更新',
-						}
+						name: 'checkForUpdate',
+						comment: '检查版本更新',
 					}, function(value) {
 						i.text(value);
 						Utils.toast(value);
@@ -230,12 +229,10 @@
 			$("button.recvMessage").on("click", function() {
 				var i = $(this).find("i");
 				Utils.app.recvMessage({
-					item: {
-						name: 'recvMessage',
-						comment: '注册广播',
-						notificationName: 'test.fxd.recvMessage',
-						type: '12'
-					}
+					name: 'recvMessage',
+					comment: '注册广播',
+					notificationName: 'test.fxd.recvMessage',
+					type: '12'
 				}, function(value) {
 					i.text(value);
 					Utils.toast(value);
@@ -244,12 +241,10 @@
 			$("button.sendMessage").on("click", function() {
 				var i = $(this).find("i");
 				Utils.app.sendMessage({
-					item: {
-						name: 'sendMessage',
-						comment: '接收消息',
-						notificationName: 'test.fxd.recvMessage',
-						type: '12'
-					}
+					name: 'sendMessage',
+					comment: '接收消息',
+					notificationName: 'test.fxd.recvMessage',
+					type: '12'
 				}, function(value) {
 					i.text(value);
 					Utils.toast(value);
@@ -270,10 +265,8 @@
 			$("button.getNetWorkStatus").on("click", function() {
 				var i = $(this).find("i");
 				Utils.app.getNetWorkStatus({
-					item: {
-						name: 'getNetWorkStatus',
-						comment: '获取网络状态',
-					}
+					name: 'getNetWorkStatus',
+					comment: '获取网络状态',
 				}, function(value) {
 					i.text(value);
 					Utils.toast(value);
@@ -282,11 +275,9 @@
 			$("button.setTitle").on("click", function() {
 				var i = $(this).find("i");
 				Utils.app.setTitle({
-					item: {
-						name: 'setTitle',
-						comment: '设置标题',
-						title: '震惊！这竟然是新标题',
-					}
+					name: 'setTitle',
+					comment: '设置标题',
+					title: '震惊！这竟然是新标题',
 				}, function(value) {
 					i.text(value);
 					Utils.toast(value);
@@ -295,11 +286,10 @@
 			$("button.playVideo").on("click", function() {
 				var i = $(this).find("i");
 				Utils.app.playVideo({
-					item: {
-						name: 'playVideo',
-						comment: '播放视频',
-						courseSrc: 'http://vs3.bdstatic.com/swf/probe.swf?v=20150311&amp;r=0.3696902815522458',
-					}
+					name: 'playVideo',
+					comment: '播放视频',
+					courseSrc: 'http://vs3.bdstatic.com/swf/probe.swf?v=20150311&amp;r=0.3696902815522458',
+
 				}, function(value) {
 					i.text(value);
 					Utils.toast(value);
@@ -308,11 +298,9 @@
 			$("button.clearTask").on("click", function() {
 				var i = $(this).find("i");
 				Utils.app.clearTask({
-					item: {
-						name: 'clearTask',
-						comment: '清理任务栈',
-						clearTask: 1,
-					}
+					name: 'clearTask',
+					comment: '清理任务栈',
+					clearTask: 1,
 				}, function(value) {
 					i.text(value);
 					Utils.toast(value);
@@ -321,11 +309,20 @@
 			$("button.downloadFile").on("click", function() {
 				var i = $(this).find("i");
 				Utils.app.downloadFile({
-					item: {
-						name: 'downloadFile',
-						comment: '下载文件',
-						url: 'http://s.cn.bing.net/az/hprichbg/rb/SaronicGulf_ZH-CN8379891695_1920x1080.jpg',
-					}
+					name: 'downloadFile',
+					comment: '下载文件',
+					url: 'http://s.cn.bing.net/az/hprichbg/rb/SaronicGulf_ZH-CN8379891695_1920x1080.jpg',
+				}, function(value) {
+					i.text(value);
+					Utils.toast(value);
+				});
+			});
+			$("button.EMail").on("click", function() {
+				var i = $(this).find("i");
+				Utils.app.EMail({
+					name: 'downloadFile',
+					comment: '发送邮件',
+					email: 'kim7879@163.com'
 				}, function(value) {
 					i.text(value);
 					Utils.toast(value);

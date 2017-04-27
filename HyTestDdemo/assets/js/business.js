@@ -1184,7 +1184,9 @@ function() {
 		// 清理任务
 		"clearTask",
 		//下载文件
-		"downloadFile"
+		"downloadFile",
+		// 发送邮件
+		"EMail"
 	];
 	$.each(methods, function(i, method) {
 		Utils.app[method] = function(params, callback) {
