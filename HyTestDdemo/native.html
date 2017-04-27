@@ -290,7 +290,7 @@
 				Utils.app.playVideo({
 					name: 'playVideo',
 					comment: '播放视频',
-					courseSrc: 'http://vs3.bdstatic.com/swf/probe.swf?v=20150311&amp;r=0.3696902815522458',
+					courseSrc: 'http://218.92.66.233:8001/online/meta/index/bfb8da84b497d14e7e8b31553b710c2bbae2e2ac.m3u8',
 
 				}, function(value) {
 					i.text(value);
@@ -344,8 +344,8 @@
 				$("button.openBrowser").on("click", function() {
 				var i = $(this).find("i");
 				Utils.app.openBrowser({
-					name: 'cellphone',
-					comment: '打电话',
+					name: 'openBrowser',
+					comment: '打开浏览器',
 					url: 'http://wwwbaidu.com/'
 				}, function(value) {
 					i.text(value);
