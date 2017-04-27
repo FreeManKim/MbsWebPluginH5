@@ -34,8 +34,8 @@
 				<button class="setTime mui-btn mui-btn-block mui-btn-primary">时间选择&nbsp;<i>10:20</i></button>
 			</div>
 			<div class="ln">
-				<button class="setTitleBarBg mui-btn mui-btn-block mui-btn-primary">设置标题栏背景色&nbsp;<i>#FFFFFF</i></button>
-				<button class="setTitleBarBg mui-btn mui-btn-block mui-btn-primary">设置标题栏背景色&nbsp;<i>#3198f7</i></button>
+				<button class="setNavigationBgcolor mui-btn mui-btn-block mui-btn-primary">设置标题栏背景色&nbsp;<i>#FFFFFF</i></button>
+				<button class="setNavigationBgcolor mui-btn mui-btn-block mui-btn-primary">设置标题栏背景色&nbsp;<i>#3198f7</i></button>
 				<button class="setTitle mui-btn mui-btn-block mui-btn-primary">设置标题&nbsp;<i>#3198f7</i></button>
 
 			</div>
@@ -172,9 +172,9 @@
 					i.text(json.time);
 				});
 			});
-			$("button.setTitleBarBg").on("click", function() {
+			$("button.setNavigationBgcolor").on("click", function() {
 				var i = $(this).find("i");
-				Utils.app.setTitleBarBg({
+				Utils.app.setNavigationBgcolor({
 					color: i.text()
 				});
 			});
@@ -281,7 +281,7 @@
 			});
 			$("button.setTitle").on("click", function() {
 				var i = $(this).find("i");
-				Utils.app.getNetWorkStatus({
+				Utils.app.setTitle({
 					item: {
 						name: 'setTitle',
 						comment: '设置标题',

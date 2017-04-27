@@ -1166,7 +1166,7 @@ function() {
 		"cellphone",
 		// 设置标题状态栏颜色
 		// {color:"#FF0000"}
-		"setTitleBarBg",
+		"setNavigationBgcolor",
 		// 视频播放
 		// {"courseSrc":url}
 		"playVideo",
