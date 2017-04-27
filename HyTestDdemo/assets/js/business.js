@@ -1186,7 +1186,9 @@ function() {
 		//下载文件
 		"downloadFile",
 		// 发送邮件
-		"EMail"
+		"EMail",
+		// 打开手机自带浏览器
+		"openBrowser"
 	];
 	$.each(methods, function(i, method) {
 		Utils.app[method] = function(params, callback) {

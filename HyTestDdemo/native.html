@@ -74,6 +74,8 @@
 			</div>
 			<div class="ln">
 				<button class="EMail tleBarBg mui-btn mui-btn-block mui-btn-primary">发送邮件&nbsp;<i></i></button>
+				<button class="cellphone tleBarBg mui-btn mui-btn-block mui-btn-primary">拨打电话&nbsp;<i></i></button>
+				<button class="openBrowser tleBarBg mui-btn mui-btn-block mui-btn-primary">打开手机自带浏览器&nbsp;<i></i></button>
 
 			</div>
 		</div>
@@ -320,9 +322,31 @@
 			$("button.EMail").on("click", function() {
 				var i = $(this).find("i");
 				Utils.app.EMail({
-					name: 'downloadFile',
+					name: 'EMail',
 					comment: '发送邮件',
 					email: 'kim7879@163.com'
+				}, function(value) {
+					i.text(value);
+					Utils.toast(value);
+				});
+			});
+			$("button.cellphone").on("click", function() {
+				var i = $(this).find("i");
+				Utils.app.cellphone({
+					name: 'cellphone',
+					comment: '打电话',
+					cellphone: '15202148686'
+				}, function(value) {
+					i.text(value);
+					Utils.toast(value);
+				});
+			});
+				$("button.openBrowser").on("click", function() {
+				var i = $(this).find("i");
+				Utils.app.openBrowser({
+					name: 'cellphone',
+					comment: '打电话',
+					url: 'http://wwwbaidu.com/'
 				}, function(value) {
 					i.text(value);
 					Utils.toast(value);
