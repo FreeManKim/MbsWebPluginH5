@@ -19,8 +19,31 @@
 		<div class="mui-content">
 			<div class="ln">
 				<a class="mui-btn mui-btn-block mui-btn-primary" href="http://euat.idoutec.cn/HyTestDdemo/native.html?action=nextPage">native测试</a>
-				<a class="mui-btn mui-btn-block mui-btn-primary" href="nativeXc.html?action=nextPage">native相册测试</a>
 			</div>
+			<div class="ln">
+			<button class="getImage mui-btn mui-btn-block mui-btn-primary">打开相机</button>
+		</div>
 		</div>
 	</body>
+	<script src="assets/js/mui.js"></script>
+	<script src="assets/js/jquery.1.11.1.js"></script>
+	<script src="assets/js/zhh.tools.js"></script>
+	<script src="assets/js/utils.js"></script>
+	<script src="assets/js/config.js"></script>
+	<script src="assets/js/business.js"></script>
+	<script src="assets/js/plugin-init.js"></script>
+	<script src="assets/js/mainpage.js"></script>
+	<script>
+		$(function($) {
+			$("button.getImage").on("click", function() {
+				Utils.app.getImage({
+					name: 'getImage',
+					comment: '相机或者相册',
+
+				}, function(value) {
+					Utils.toast(value);
+				})
+			});
+		});
+	</script>
 </html>
