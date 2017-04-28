@@ -1190,7 +1190,13 @@ function() {
 		// 打开手机自带浏览器
 		"openBrowser",
 		//相册or相机
-		"getImage"
+		"getImage",
+		// 设置搜索界面
+		"setSearchBar",
+		//获取缓存大小
+		"getCache",
+		//设置中间标题单选多选
+		"setSegment"
 	];
 	$.each(methods, function(i, method) {
 		Utils.app[method] = function(params, callback) {
