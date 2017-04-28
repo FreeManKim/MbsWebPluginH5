@@ -217,15 +217,16 @@
 					Utils.toast(value);
 				});
 
-				$("button.checkforupdate").on("click", function() {
-					var i = $(this).find("i");
-					Utils.app.checkForUpdate({
-						name: 'checkForUpdate',
-						comment: '检查版本更新',
-					}, function(value) {
-						i.text(value);
-						Utils.toast(value);
-					});
+			});
+
+			$("button.checkforupdate").on("click", function() {
+				var i = $(this).find("i");
+				Utils.app.checkForUpdate({
+					name: 'checkForUpdate',
+					comment: '检查版本更新',
+				}, function(value) {
+					i.text(value);
+					Utils.toast(value);
 				});
 			});
 			$("button.recvMessage").on("click", function() {
@@ -341,7 +342,7 @@
 					Utils.toast(value);
 				});
 			});
-				$("button.openBrowser").on("click", function() {
+			$("button.openBrowser").on("click", function() {
 				var i = $(this).find("i");
 				Utils.app.openBrowser({
 					name: 'openBrowser',
