@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 	<head>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
@@ -15,14 +16,24 @@
 		<script type="text/javascript" src='cache_update.js'></script>
 		<title>测试首页</title>
 	</head>
+
 	<body>
 		<div class="mui-content">
 			<div class="ln">
 				<a class="mui-btn mui-btn-block mui-btn-primary" href="http://euat.idoutec.cn/HyTestDdemo/native.html?action=nextPage">native测试</a>
 			</div>
 			<div class="ln">
-			<button class="getImage mui-btn mui-btn-block mui-btn-primary">打开相机</button>
-		</div>
+				<button class="getImage mui-btn mui-btn-block mui-btn-primary">打开相机</button>
+			</div>
+			<div class="ln">
+				<button class="setSearchBar mui-btn mui-btn-block mui-btn-primary">搜索标题</button>
+			</div>
+			<div class="ln">
+				<button class="getCache mui-btn mui-btn-block mui-btn-primary">获取缓存大小</button>
+			</div>
+			<div class="ln">
+				<button class="setSegment mui-btn mui-btn-block mui-btn-primary">设置多标题</button>
+			</div>
 		</div>
 	</body>
 	<script src="assets/js/mui.js"></script>
@@ -44,6 +55,34 @@
 					Utils.toast(value);
 				})
 			});
+			$("button.setSearchBar").on("click", function() {
+				Utils.app.setSearchBar({
+					name: 'setSearchBar',
+					comment: '搜索',
+
+				}, function(value) {
+					Utils.toast(value);
+				})
+			});
+			$("button.getCache").on("click", function() {
+				Utils.app.getCache({
+					name: 'getCache',
+					comment: '获取缓存大小',
+
+				}, function(value) {
+					Utils.toast(value);
+				})
+			});
+			$("button.setSegment").on("click", function() {
+				Utils.app.setSegment({
+					name: 'setSegment',
+					comment: '多标题',
+
+				}, function(value) {
+					Utils.toast(value);
+				})
+			});
 		});
 	</script>
+
 </html>
