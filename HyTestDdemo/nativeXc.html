@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<title>原生接口测试</title>
+		<link href="../assets/img/icon/favicon.ico" rel="shortcut icon" />
+
+		<link rel="stylesheet" href="assets/css/mui.css" />
+		<link rel="stylesheet" href="assets/css/font-awesome.css" />
+		<link rel="stylesheet" href="assets/css/common.css" />
+		<link rel="stylesheet" href="assets/css/business.css" />
+		<script type="text/javascript" src='cache_update.js'></script>
+		<title>相册测试页面</title>
+	</head>
+
+	<body>
+		<div class="ln">
+			<button class="getImage mui-btn mui-btn-block mui-btn-primary">打开相机</button>
+			<button class="toast-2 mui-btn mui-btn-block mui-btn-primary">长消息</button>
+			<button class="loading mui-btn mui-btn-block mui-btn-primary">正在加载</button>
+		</div>
+	</body>
+	<script src="assets/js/mui.js"></script>
+	<script src="assets/js/jquery.1.11.1.js"></script>
+	<script src="assets/js/zhh.tools.js"></script>
+	<script src="assets/js/utils.js"></script>
+	<script src="assets/js/config.js"></script>
+	<script src="assets/js/business.js"></script>
+	<script src="assets/js/plugin-init.js"></script>
+	<script src="assets/js/mainpage.js"></script>
+	<script>
+		$(function($) {
+			$("button.getImage").on("click", function() {
+				Utils.app.getImage({
+					name: 'getImage',
+					comment: '相机或者相册',
+
+				}, function(value) {
+					Utils.toast(value);
+				})
+			});
+		});
+	</script>
+
+</html>

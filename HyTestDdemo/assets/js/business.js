@@ -1188,8 +1188,9 @@ function() {
 		// 发送邮件
 		"EMail",
 		// 打开手机自带浏览器
-		"openBrowser"
-		//注释
+		"openBrowser",
+		//相册or相机
+		"getImage"
 	];
 	$.each(methods, function(i, method) {
 		Utils.app[method] = function(params, callback) {
