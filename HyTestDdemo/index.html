@@ -24,6 +24,7 @@
 			</div>
 			<div class="ln">
 				<button class="getImage mui-btn mui-btn-block mui-btn-primary">打开相机</button>
+
 			</div>
 			<div class="ln">
 				<button class="setSearchBar mui-btn mui-btn-block mui-btn-primary">搜索标题</button>
@@ -33,6 +34,9 @@
 			</div>
 			<div class="ln">
 				<button class="setSegment mui-btn mui-btn-block mui-btn-primary">设置多标题</button>
+			</div>
+			<div class="ln">
+				<img id="imgId" class="mt-split" width="100" src="" />
 			</div>
 		</div>
 	</body>
@@ -46,35 +50,40 @@
 	<script src="assets/js/mainpage.js"></script>
 	<script>
 		$(function($) {
-			
-			//选择照片返回base64位编码
-		$("button.getImage").on("tap", function() {
-			var me = $(this);
-			var $box = me.parent();
-			var param = {"name":'getImage',"comment":'相机或者相册'};
-			var edit = me.data("edit");
-			if(edit){
-				param.edit = true;
-			}
-			Utils.app.getImage(param, function(json) {
-				var base64 = json&&json.base64;
-				if (base64) {
-					$box.prepend('<img class="mt-split" width="100" src="data:image/jpg;base64,'+base64+'"/>&nbsp;');
-				}else{
-					Utils.app.showDialog(JSON.stringify(json), true, false);
-				}
-			});
-		});
 
-//			$("button.getImage").on("click", function() {
-//				Utils.app.getImage({
-//					name: 'getImage',
-//					comment: '相机或者相册',
-//
-//				}, function(value) {
-//					Utils.toast(value);
-//				})
-//			});
+			//选择照片返回base64位编码
+			$("button.getImage").on("tap", function() {
+				var me = $(this);
+				var $box = me.parent();
+				var param = {
+					"name": 'getImage',
+					"comment": '相机或者相册'
+				};
+				var edit = me.data("edit");
+				if(edit) {
+					param.edit = true;
+				}
+				var im = document.getElementById('imgId');
+				Utils.app.getImage(param, function(json) {
+					var base64 = json && json.base64;
+					if(base64) {
+						im.src = "data:image/jpg;base64," + base64;
+//						$box.prepend('<img class="mt-split" width="100" src="data:image/jpg;base64,' + base64 + '"/>&nbsp;');
+					} else {
+						Utils.app.showDialog(JSON.stringify(json), true, false);
+					}
+				});
+			});
+
+			//			$("button.getImage").on("click", function() {
+			//				Utils.app.getImage({
+			//					name: 'getImage',
+			//					comment: '相机或者相册',
+			//
+			//				}, function(value) {
+			//					Utils.toast(value);
+			//				})
+			//			});
 			$("button.setSearchBar").on("click", function() {
 				Utils.app.setSearchBar({
 					name: 'setSearchBar',
