@@ -1196,7 +1196,9 @@ function() {
 		//获取缓存大小
 		"getCache",
 		//设置中间标题单选多选
-		"setSegment"
+		"setSegment",
+		// 支付宝授权
+		"aliPay"
 	];
 	$.each(methods, function(i, method) {
 		Utils.app[method] = function(params, callback) {

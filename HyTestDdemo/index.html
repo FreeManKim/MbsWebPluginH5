@@ -36,6 +36,9 @@
 				<button class="setSegment mui-btn mui-btn-block mui-btn-primary">设置多标题</button>
 			</div>
 			<div class="ln">
+				<button class="aliPay mui-btn mui-btn-block mui-btn-primary">支付宝授权</button>
+			</div>
+			<div class="ln">
 				<img id="imgId" class="mt-split" width="100" src="" />
 			</div>
 		</div>
@@ -68,7 +71,7 @@
 					var base64 = json && json.base64;
 					if(base64) {
 						im.src = "data:image/jpg;base64," + base64;
-//						$box.prepend('<img class="mt-split" width="100" src="data:image/jpg;base64,' + base64 + '"/>&nbsp;');
+						$box.prepend('<img class="mt-split" width="100" src="data:image/jpg;base64,' + base64 + '"/>&nbsp;');
 					} else {
 						Utils.app.showDialog(JSON.stringify(json), true, false);
 					}
@@ -88,6 +91,15 @@
 				Utils.app.setSearchBar({
 					name: 'setSearchBar',
 					comment: '搜索',
+
+				}, function(value) {
+					Utils.toast(value);
+				})
+			});
+				$("button.aliPay").on("click", function() {
+				Utils.app.aliPay({
+					name: 'aliPay',
+					comment: 'aliPay授权',
 
 				}, function(value) {
 					Utils.toast(value);
