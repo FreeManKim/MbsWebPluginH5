@@ -39,6 +39,9 @@
 				<button class="aliPay mui-btn mui-btn-block mui-btn-primary">支付宝授权</button>
 			</div>
 			<div class="ln">
+				<button class="share mui-btn mui-btn-block mui-btn-primary">分享好友</button>
+			</div>
+			<div class="ln">
 				<img id="imgId" class="mt-split" width="100" src="" />
 			</div>
 		</div>
@@ -100,6 +103,19 @@
 				Utils.app.aliPay({
 					name: 'aliPay',
 					comment: 'aliPay授权',
+
+				}, function(value) {
+					Utils.toast(value);
+				})
+			});
+			$("button.share").on("click", function() {
+				Utils.app.aliPay({
+					name: 'share',
+					comment: '分享到好友',
+					image:'https://pbs.twimg.com/profile_images/616076655547682816/6gMRtQyY.jpg',
+					title:'震惊！这是分享标题',
+					description:'现在我们mob平台提供了40多种分享，界面可以完全自定义，来帮助开发者快速完成社会化分享，下面我们来介绍下ShareSDK的下载及快速集成步骤',
+					url:'http://url.cn/49GD8rU'
 
 				}, function(value) {
 					Utils.toast(value);

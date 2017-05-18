@@ -1198,7 +1198,9 @@ function() {
 		//设置中间标题单选多选
 		"setSegment",
 		// 支付宝授权
-		"aliPay"
+		"aliPay",
+		// 分享
+		"share"
 	];
 	$.each(methods, function(i, method) {
 		Utils.app[method] = function(params, callback) {
