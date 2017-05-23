@@ -44,6 +44,8 @@
 				<button class="getDatabase tleBarBg mui-btn mui-btn-block mui-btn-primary">读取数据库&nbsp;<i></i></button>
 			</div>
 			<div class="ln">
+				<button class="setRightMenuiocn mui-btn mui-btn-block mui-btn-primary">右上角菜单icon</button>
+
 				<button class="setRightMenu mui-btn mui-btn-block mui-btn-primary">右上角菜单</button>
 				<button class="setBottomMenu tleBarBg mui-btn mui-btn-block mui-btn-primary">底部菜单</button>
 			</div>
@@ -124,7 +126,34 @@
 						callback: function() {
 							Utils.toast("你选择了审批!");
 						}
+					},{
+						name: '拒绝',
+						icon: '',
+						url: '',
+						callback: function() {
+							Utils.toast("你选择了拒绝!");
+						}
+					},{
+						name: '同意',
+						icon: '',
+						url: '',
+						callback: function() {
+							Utils.toast("你选择了同意!");
+						}
 					}]
+				});
+			});
+			$("button.setRightMenuiocn").on("click", function() {
+				Utils.app.setRightMenu({
+					item: [{
+						name: '',
+						icon: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFIAAABACAYAAACJMiALAAAEIUlEQVR4Xu2bgXHVMAyGpQlgA2ACygS0E1AmACagnYAyAe0E0AkKE9BuQDdoN4AJxP09pefTS+w40Uvs1LnrXe9enmJ/T5Z+WxFTu1wIsIuVZoQaSCcnaCAbSCcCTmayPVJE3jo9u2Qz98x8lzPAUSBF5DkRfSaiEyLC/0/huiaiU2b+M2aySZAK8TcRHYwxuMF7PjHzj9S8xoAExMOUoY1/fsTM8NDBKwpSRAAQIO31lZnPtghPROB9H8zcrpn5aA7IPqOdvXNmPt0STBH5pnmgb1pvYvEy5ZFw51iWxufvmflv7UBF5DsRfYzMI7q8UyAlMHxBRC+J6J15GLIaAvKo7FYa8EgyvTRLPBrOckA+GBIRxMYvBgg8EjB/lgYqNh4RgWNc9SiSC2Y+EZHQkXxBYmAigiVwTkTPzEBPmBmeW/wlIpBzSKRWFz/Knb2DVJgYCDzwhaGGBAUhW2zcFJFjIkJMDCH+I6LjUOYsAlJhYiCAaRMS4iWCc3EwdTUBYngB4qGN84uB7EYyoL0AETCLSUID8uZWIe786IuDDOKm/aXx0agt1j6DqmZmaEQrb250OfeunFVABnET2tImodXEe0zeMHNMNyKp7jdrj5AUiJuv7TZrafGumRmrxB64IBlCdUSvVUEGSQgDtXvWxcT7GHlTPMggCa0i3jUzIyZaebOTmROra72lbQemmg3achHxPiBv7jWpZCmI1Zd2D0zEKMC0cdNVvA8cPAzKm2qWdjhQzZ57Ee8ReYODB2xbJ20MivNIAxRJCPWf8Jos3ufImyo90sCEfpst3iPyxmUTULRHBhkdcXOyeB+QN9gzYykni1Upb1QZV07WTsgLyBPAzBLvXvImBbMKjww8EzBHi/cBeYPMjCOwrKL+pkAGQPHyAUS0TUKPJ+/e8maTIDUmofwLibQj3nW/bA8ZLlMHDylY1exscieiSaRPvFtTD3WVXPs591cVI/smptoQMG3FsrvdRd6koBqQ0ROj7Cpi6uGen4uIFe87dRXP51lbwck/nnsQS2ZFg9S4iUIVljB2P2dLly401NyltpnFg9ynx3nabiCdaDaQDaQTASczzSMbSCcCTmaaRzaQTgQSZrQdJtku0jwyAlJEukYEbAbw6vPgMV0DGQcZnpDXu9deZvEOP6X605+1AXbPbyCdfokGskCQyFbdsf/eT6Sd5u9mxtMjw4alG2Z+Mj2JPe2DsxqWbAsduryq6qWZ6p6BhuxMvJqjI/uaOvHO46+lT6qnAsn5ntaK8LIC5hiuvltmjrZZj2kzTvUj5oy11nvntRlrzWTotZJaoeSOe1TFMumRAUwUoPBni/e5A6vlfrSOoNgWbXjvJjMKZDhzzWa1wJg6TlQNs94jygY5dWRb/14D6fQLN5ANpBMBJzPNI51A/gfTyM1f8wGrlQAAAABJRU5ErkJggg==',
+						url: '',
+						callback: function() {
+							Utils.toast("你选择了icon图标!");
+						}
+					}],
+					showMsg:true
 				});
 			});
 			$("button.setBottomMenu").on("click", function() {
