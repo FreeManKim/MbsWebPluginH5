@@ -1200,7 +1200,11 @@ function() {
 		// 支付宝授权
 		"aliPay",
 		// 分享
-		"share"
+		"share",
+		// 身份证识别
+		"IDCardScan",
+		// 行驶证识别
+		"VLCardScan"
 	];
 	$.each(methods, function(i, method) {
 		Utils.app[method] = function(params, callback) {

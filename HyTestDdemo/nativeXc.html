@@ -21,6 +21,10 @@
 		<div class="ln">
 			<button class="getImage mui-btn mui-btn-block mui-btn-primary">打开相机</button>
 		</div>
+		<div class="ln">
+			<button class="VLCardScan mui-btn mui-btn-block mui-btn-primary">行驶证识别</button>
+			<button class="IDCardScan mui-btn mui-btn-block mui-btn-primary">身份证识别</button>
+		</div>
 	</body>
 	<script src="assets/js/mui.js"></script>
 	<script src="assets/js/jquery.1.11.1.js"></script>
@@ -36,6 +40,24 @@
 				Utils.app.getImage({
 					name: 'getImage',
 					comment: '相机或者相册',
+
+				}, function(value) {
+					Utils.toast(value);
+				})
+			});
+			$("button.VLCardScan").on("click", function() {
+				Utils.app.VLCardScan({
+					name: 'VLCardScan',
+					comment: '行驶证识别',
+
+				}, function(value) {
+					Utils.toast(value);
+				})
+			});
+			$("button.IDCardScan").on("click", function() {
+				Utils.app.IDCardScan({
+					name: 'IDCardScan',
+					comment: '身份证识别',
 
 				}, function(value) {
 					Utils.toast(value);
