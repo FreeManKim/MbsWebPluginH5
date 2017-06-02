@@ -1204,7 +1204,11 @@ function() {
 		// 身份证识别
 		"IDCardScan",
 		// 行驶证识别
-		"VLCardScan"
+		"VLCardScan",
+		// 存储数据库
+		"db_set",
+		// 获取数据
+		"db_get"
 	];
 	$.each(methods, function(i, method) {
 		Utils.app[method] = function(params, callback) {

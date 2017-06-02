@@ -20,10 +20,12 @@
 	<body>
 		<div class="ln">
 			<button class="getImage mui-btn mui-btn-block mui-btn-primary">打开相机</button>
-		</div>
-		<div class="ln">
 			<button class="VLCardScan mui-btn mui-btn-block mui-btn-primary">行驶证识别</button>
 			<button class="IDCardScan mui-btn mui-btn-block mui-btn-primary">身份证识别</button>
+		</div>
+		<div class="ln">
+			<button class="db_set mui-btn mui-btn-block mui-btn-primary">db_set</button>
+			<button class="db_get mui-btn mui-btn-block mui-btn-primary">db_get</button>
 		</div>
 	</body>
 	<script src="assets/js/mui.js"></script>
@@ -58,6 +60,25 @@
 				Utils.app.IDCardScan({
 					name: 'IDCardScan',
 					comment: '身份证识别',
+
+				}, function(value) {
+					Utils.toast(value);
+				})
+			});
+			$("button.db_set").on("click", function() {
+				Utils.app.db_set({
+					key: 'key',
+					account: 'admin',
+
+				}, function(value) {
+					Utils.toast(value);
+				})
+			});
+			$("button.db_get").on("click", function() {
+				Utils.app.db_set({
+					key: 'key',
+					account: 'admin',
+					value:'value是9999',
 
 				}, function(value) {
 					Utils.toast(value);
