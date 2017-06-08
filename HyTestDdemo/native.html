@@ -20,6 +20,10 @@
 	<body>
 		<div class="mui-content">
 			<div class="ln">
+				<button class="placeholder mui-btn mui-btn-block mui-btn-primary">显示输入框</button>
+
+			</div>
+			<div class="ln">
 				<button class="toast-1 mui-btn mui-btn-block mui-btn-primary">消息</button>
 				<button class="toast-2 mui-btn mui-btn-block mui-btn-primary">长消息</button>
 				<button class="loading mui-btn mui-btn-block mui-btn-primary">正在加载</button>
@@ -148,7 +152,7 @@
 				Utils.app.setRightMenu({
 					item: [{
 						name: '',
-						icon:'http://p1.meituan.net/jungle/c6dea00274ef4f2e64d65646dce9c7061099.png',
+						icon:'lock',
 						url: '',
 						callback: function() {
 							Utils.toast("你选择了icon图标!");
@@ -378,6 +382,18 @@
 					name: 'openBrowser',
 					comment: '打开浏览器',
 					url: 'http://www.baidu.com/'
+				}, function(value) {
+					i.text(value);
+					Utils.toast(value);
+				});
+			});
+			
+			$("button.placeholder").on("click", function() {
+				var i = $(this).find("i");
+				Utils.app.placeholder({
+					name: 'placeholder',
+					comment: '显示输入框',
+					parm: '回复 Ernest Joker'
 				}, function(value) {
 					i.text(value);
 					Utils.toast(value);

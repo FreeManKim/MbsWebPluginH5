@@ -1208,7 +1208,9 @@ function() {
 		// 存储数据库
 		"db_set",
 		// 获取数据
-		"db_get"
+		"db_get",
+		// 显示输入框
+		"placeholder"
 	];
 	$.each(methods, function(i, method) {
 		Utils.app[method] = function(params, callback) {
