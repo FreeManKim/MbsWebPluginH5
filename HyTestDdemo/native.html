@@ -49,6 +49,7 @@
 			</div>
 			<div class="ln">
 				<button class="setRightMenuiocn mui-btn mui-btn-block mui-btn-primary">右上角菜单icon</button>
+				<button class="setRightMenuHor mui-btn mui-btn-block mui-btn-primary">水平右上角菜单</button>
 
 				<button class="setRightMenu mui-btn mui-btn-block mui-btn-primary">右上角菜单</button>
 				<button class="setBottomMenu tleBarBg mui-btn mui-btn-block mui-btn-primary">底部菜单</button>
@@ -159,6 +160,27 @@
 						}
 					}],
 					showMsg:true
+				});
+			});
+			$("button.setRightMenuHor").on("click", function() {
+				Utils.app.setRightMenu({
+					item: [{
+						name: '',
+						icon:'lock',
+						url: '',
+						callback: function() {
+							Utils.toast("你选择了lock图标!");
+						}
+					},{
+						name: '',
+						icon:'ico_close_list',
+						url: '',
+						callback: function() {
+							Utils.toast("你选择了ico_close_list图标!");
+						}
+					}],
+					showMsg:true,
+					orientation:'HORIZONTAL'
 				});
 			});
 			$("button.setBottomMenu").on("click", function() {
