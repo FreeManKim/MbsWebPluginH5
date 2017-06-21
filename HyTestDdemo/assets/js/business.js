@@ -1210,7 +1210,16 @@ function() {
 		// 获取数据
 		"db_get",
 		// 显示输入框
-		"placeholder"
+		"placeholder",
+		// 图片浏览页面
+		"browseImage",
+		// 上传文件
+		"upLoadFile",
+		//路由跳转
+		"openApp",
+		// 定位
+		"Location"
+		
 	];
 	$.each(methods, function(i, method) {
 		Utils.app[method] = function(params, callback) {

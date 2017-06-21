@@ -20,7 +20,13 @@
 	<body>
 		<div class="mui-content">
 			<div class="ln">
-				<button class="placeholder mui-btn mui-btn-block mui-btn-primary">显示输入框</button>
+				<button class="placeholder mui-btn mui-btn-block mui-btn-primary">显示输入框&nbsp<i></i></button>
+
+			</div>
+			<div class="ln">
+				<button class="browseImage mui-btn mui-btn-block mui-btn-primary">图片浏览&nbsp<i></i></button>
+				<button class="Location mui-btn mui-btn-block mui-btn-primary">开启定位&nbsp<i></i></button>
+				<button class="​routerApp mui-btn mui-btn-block mui-btn-primary">路由跳转&nbsp<i></i></button>
 
 			</div>
 			<div class="ln">
@@ -415,12 +421,62 @@
 				Utils.app.placeholder({
 					name: 'placeholder',
 					comment: '显示输入框',
-					parm: '回复 Ernest Joker'
+					hint: '回复 Ernest Joker'
 				}, function(value) {
-					i.text(value);
+					i.text(value.message);
 					Utils.toast(value);
 				});
 			});
+			
+			$("button.browseImage").on("click", function() {
+				var i = $(this).find("i");
+				Utils.app.browseImage({
+					name: 'browseImage',
+					comment: '图片浏览器',
+					bigImageURLs:[
+					"http://pic.jj20.com/up/allimg/1011/05241G14R6/1F524114R6-15.jpg",
+					"http://img2.niutuku.com/desk/anime/2520/2520-8688.jpg",
+					"http://attach.bbs.miui.com/forum/201705/04/175246q6df7b1bqbkgbu9w.jpg",
+					"http://attach.bbs.miui.com/forum/201705/04/153145pa48hcln7dq44ggr.jpg",
+					"http://pic.jj20.com/up/allimg/1011/05241G14F4/1F524114F4-4.jpg",
+					"http://a.ikafan.com/attachment/forum/201312/15/081014eoje34oo12km813m.jpg",
+					"http://img6.3lian.com/c23/desk2/22/28/24.jpg",
+					"http://attach.bbs.miui.com/forum/201705/24/174449lghk0zhhkggessmg.jpg",
+					"http://p3.gexing.com/G1/M00/34/36/rBACE1JPeLfzN8pgAAnkXFzlWPQ037.jpg",
+					"http://img5.91huo.cn/zx.sj/2012/09/20/zx_showgirl_013.jpg"
+					],
+					currentIndex:"1"
+				}, function(value) {
+					i.text(value.message);
+					Utils.toast(value);
+				});
+			});
+			
+				$("button.​routerApp").on("click", function() {
+				var i = $(this).find("i");
+				Utils.app.openApp({
+					name: 'Location',
+					comment: '定位',
+					scheme:"mbsapp://mbs.app/openwith?name=zhangsan&age=26",
+					market:"market://details?id=cn.wps.moffice_eng"
+				}, function(value) {
+					i.text(value.province +"  "+ value.city);
+					Utils.toast(value);
+				});
+			});
+			
+			$("button.Location").on("click", function() {
+				var i = $(this).find("i");
+				Utils.app.Location({
+					name: 'Location',
+					comment: '定位'
+				}, function(value) {
+					i.text(value.province +"  "+ value.city);
+					Utils.toast(value);
+				});
+			});
+		
+		
 		});
 	</script>
 

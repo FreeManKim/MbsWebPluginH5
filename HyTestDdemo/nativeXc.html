@@ -27,6 +27,9 @@
 			<button class="db_set mui-btn mui-btn-block mui-btn-primary">db_set</button>
 			<button class="db_get mui-btn mui-btn-block mui-btn-primary">db_get</button>
 		</div>
+		<div class="ln">
+			<button class="upLoadFile mui-btn mui-btn-block mui-btn-primary">upLoadFile<i></i></button>
+		</div>
 	</body>
 	<script src="assets/js/mui.js"></script>
 	<script src="assets/js/jquery.1.11.1.js"></script>
@@ -80,6 +83,16 @@
 					account: 'admin',
 					value:'value是9999',
 
+				}, function(value) {
+					Utils.toast(value);
+				})
+			});
+			$("button.upLoadFile").on("click", function() {
+				Utils.app.upLoadFile({
+					url: '/image/upload',
+					isCrop: false,
+					pickPhotoCount:9,
+					size:100
 				}, function(value) {
 					Utils.toast(value);
 				})
